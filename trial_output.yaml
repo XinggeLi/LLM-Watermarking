@@ -1,0 +1,60 @@
+input:
+  device: mps
+  args:
+    model_name_or_path: facebook/opt-1.3B
+    load_fp16: false
+    prompt_max_length: null
+    max_new_tokens: 200
+    generation_seed: 123
+    use_sampling: true
+    n_beams: 1
+    sampling_temp: 0.7
+    seeding_scheme: simple_1
+    gamma: 0.25
+    delta: 2.0
+    normalizers: ''
+    z_threshold: 4.0
+    ignore_repeated_bigrams: false
+  prompt: write some code in python
+output:
+  wo_watermark:
+    text: ', or perl, or c#, or any other programming language that you can read,
+      and start using it.  you will learn a lot more in a year than you would trying
+      to learn an entire language.  plus, you get to see what people are saying and
+      what people are doing.
+
+      I''d like to do this, but it''s not practical in my area. I don''t have access
+      to a computer lab. Any other suggestions, I''m open to try something.
+
+      you could try reading code on the internet.    or, you could try reading code
+      on the internet.    or you could try reading code on the internet.    or you
+      could try reading code on the internet.'
+    metrics:
+      num_tokens_scored: 147
+      num_green_tokens: 32
+      green_fraction: 0.21768707482993196
+      z_score: -0.9047619047619048
+      p_value: 0.817204231217584
+      prediction: false
+  w_watermark:
+    text: ', and see if it works.
+
+      I''ve found that Python is just way too slow for common use - I''m mainly interested
+      in using it to help me learn the ropes and write small apps quickly.
+
+      i guess what you are asking is "what programming language is best to learn javascript
+      with?".  python is faster than c++ but slower than javascript. but definitely
+      not as fast as java/c#/ruby.  you probably need to look at a few different ones.  you
+      probably need to look at a few different ones.  you probably need to look at
+      a few different ones.
+
+      But what can I program with it? For example, I''m interested in writing a twitter-like
+      application, and I''m not sure what sort of performance I should expect.'
+    metrics:
+      num_tokens_scored: 156
+      num_green_tokens: 91
+      green_fraction: 0.5833333333333334
+      z_score: 9.614803401237305
+      p_value: 3.462074844860726e-22
+      prediction: true
+      confidence: 1.0
